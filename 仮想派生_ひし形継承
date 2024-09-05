@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+
+class food
+{
+public:
+	food()
+	{
+		cout << "食べられる" << endl;
+	}
+};
+
+//仮想派生　virtual
+class lemon:virtual public food
+{
+public:
+	lemon()
+	{
+		cout << "酸っぱい" << endl;
+	}
+};
+
+class sugar :virtual public food
+{
+public:
+	sugar()
+	{
+		cout << "甘い" << endl;
+	}
+};
+
+class lemocake :public lemon, public sugar
+{
+public:
+	lemocake()
+	{
+		cout << "レモンケーキです" << endl;
+	}
+};
+
+void test_2()
+{
+	lemocake lt;
+}
+
+int main()
+{
+	test_2();
+
+	return 0;
+}
